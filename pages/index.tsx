@@ -1,3 +1,5 @@
+import Billboard from '@/components/Billboard';
+import Navbar from '@/components/Navbar';
 import useCurrentUser from '@/hooks/useCurrentUser';
 import { NextPageContext } from 'next'
 import {getSession, signOut} from 'next-auth/react'
@@ -23,9 +25,8 @@ export default function Home() {
   const {data: user} = useCurrentUser();
   return (
     <>
-    <div className="text-red-500 text-xl font-bold">Hello world.</div>
-    <p className='text-white'>Logged in: {user?.name}</p>
-    <button className='h-10 w-full bg-white' onClick={() => signOut()}>sign out</button>
+      <Navbar />
+      <Billboard/>
     </>
   )
 }
